@@ -21,7 +21,7 @@
         android:verticalSpacing="5dp"
         android:focusable="true"
         android:clickable="true"
-        android:layout_below="@+id/titleSalleType"
+        android:layout_below="@+id/buttonBack"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -32,4 +32,13 @@
         android:text="Large Text"
         android:id="@+id/titleSalleType"
         android:enabled="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="retour "
+        android:id="@+id/buttonBack"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name">GALLERY_PROJECT</string>
     <string-array name="image_salle1">
-    <item>@drawable/image_picasso_1</item>
-
+        <item>@drawable/van_gogh_img1</item>
+        <item>@drawable/monet_img2</item>
+        <item>@drawable/monet_img1</item>
     </string-array>
     <string-array name="image_salle2">
-        <item>@drawable/img_van_gogh</item>
-
+        <item>@drawable/dali_img1</item>
     </string-array>
     <string-array name="image_salle3">
 
-
     </string-array>
     <string-array name="image_salle4">
+        <item>@drawable/picasso_img1</item>
     </string-array>
 </resources>

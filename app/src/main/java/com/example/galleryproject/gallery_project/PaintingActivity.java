@@ -40,7 +40,7 @@ public class PaintingActivity extends AppCompatActivity {
                 finish();
             }
         });
-        Toast.makeText(PaintingActivity.this, author, Toast.LENGTH_SHORT).show();
+
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -49,8 +49,8 @@ public class PaintingActivity extends AppCompatActivity {
                detailsActivity.putExtra("title", item.getTitle());
 
                 String storage = saveToInternalStorage(item.getImage());
-                detailsActivity.putExtra("storage",storage);
-                Toast.makeText(PaintingActivity.this, item.toString(), Toast.LENGTH_SHORT).show();
+                detailsActivity.putExtra("imagePath",storage);
+                detailsActivity.putExtra("imageName",item.getImage().toString());
                //detailsActivity.putExtra("image", item.getImage());
               startActivity(detailsActivity);
 
@@ -62,7 +62,8 @@ public class PaintingActivity extends AppCompatActivity {
     private String saveToInternalStorage(Bitmap bitmapImage){
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        File mypath=new File(directory,"profile.jpg");
+        File mypath=new File(directory,bitmapImage+".jpg");
+
 
         FileOutputStream fos = null;
         try {
@@ -114,6 +115,7 @@ public class PaintingActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
             Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 500, 600, true);
             imageItems.add(new ImageItem(resizedbitmap, "peinture"+i));
+
         }
         return imageItems;
     }

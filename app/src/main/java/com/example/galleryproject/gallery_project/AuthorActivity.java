@@ -50,7 +50,6 @@ public class AuthorActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(AuthorActivity.this, "", Toast.LENGTH_SHORT).show();
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -75,7 +74,6 @@ public class AuthorActivity extends AppCompatActivity {
     private ArrayList<ImageItem> getData(int id) {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
 
-        ArrayList<String> mylist = new ArrayList<String>();
 ;
 
 

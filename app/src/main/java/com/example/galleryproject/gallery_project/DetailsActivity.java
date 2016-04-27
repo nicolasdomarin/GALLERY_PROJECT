@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,12 +24,15 @@ public class DetailsActivity extends AppCompatActivity{
         setContentView(R.layout.details_activity);
 
         String title = getIntent().getStringExtra("title");
-        String path = getIntent().getStringExtra("storage");
+        String path = getIntent().getStringExtra("imagePath");
+        String imagename = getIntent().getStringExtra("imageName");
         try {
-            File f=new File(path, "profile.jpg");
+            File f=new File(path,imagename+".jpg");
             Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
             ImageView img=(ImageView)findViewById(R.id.image);
-            img.setImageBitmap(b);
+            //img.setImageBitmap(b);
+
+            Picasso.with(DetailsActivity.this).load(f).into(img);
         }
         catch (FileNotFoundException e)
         {

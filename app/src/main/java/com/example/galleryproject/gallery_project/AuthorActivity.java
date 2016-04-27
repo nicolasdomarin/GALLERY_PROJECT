@@ -14,16 +14,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class SecondActivity extends AppCompatActivity {
+public class AuthorActivity extends AppCompatActivity {
     private GridView gridView;
     private GridViewAdapter gridAdapter;
     private TextView title;
     private Button buttonBack;
     private int idSalle;
     private String nameSalle;
+    String[] autors = null;
+    TypedArray imgs = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,15 +50,21 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(SecondActivity.this, "", Toast.LENGTH_SHORT).show();
+        Toast.makeText(AuthorActivity.this, "", Toast.LENGTH_SHORT).show();
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                ImageItem item = (ImageItem) parent.getItemAtPosition(position);
-                Intent detailsActivity = new Intent(SecondActivity.this, DetailsActivity.class);
-                detailsActivity.putExtra("title", item.getTitle());
-                detailsActivity.putExtra("image", item.getImage());
-                startActivity(detailsActivity);
+
+
+
+               ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+//                Intent detailsActivity = new Intent(AuthorActivity.this, DetailsActivity.class);
+//                detailsActivity.putExtra("title", item.getTitle());
+//                detailsActivity.putExtra("image", item.getImage());
+//                startActivity(detailsActivity);
+                  Intent paintingActivity = new Intent(AuthorActivity.this,PaintingActivity.class);
+                  paintingActivity.putExtra("author_name",item.getTitle());
+                 startActivity(paintingActivity);
             }
         });
     }
@@ -67,11 +74,10 @@ public class SecondActivity extends AppCompatActivity {
      */
     private ArrayList<ImageItem> getData(int id) {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
-        TypedArray imgs = null;
-        ArrayList<String> mylist = new ArrayList<String>();
-;        String[] autors = null;
 
-       // Toast.makeText(SecondActivity.this, some_array[0], Toast.LENGTH_SHORT).show();
+        ArrayList<String> mylist = new ArrayList<String>();
+;
+
 
         switch (id){
             case 1:
@@ -91,14 +97,14 @@ public class SecondActivity extends AppCompatActivity {
                 autors = getResources().getStringArray(R.array.desc_salle4);
                 break;
 
+
         }
 
 
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-
             //ca resize l'image en 300*300
-            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 300, 200, true);
+            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 500, 600, true);
             imageItems.add(new ImageItem(resizedbitmap, autors[i]));
         }
         return imageItems;

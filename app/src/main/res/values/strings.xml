@@ -1,37 +1,62 @@
 <resources>
     <string name="app_name">Museum</string>
-    <string name="monet_desc">MONET</string>
-    <string name="picasso_desc">PICASSO</string>
-    <string name="dali_desc">DALI</string>
-    <string name="van_gogh_desc">VAN GOGH</string>
+    <string name="monet">MONET</string>
+    <string name="picasso">PICASSO</string>
+    <string name="dali">DALI</string>
+    <string name="van_gogh">VAN GOGH</string>
+    <string name="renoir">RENOIR</string>
+    <string name="botticelli">BOTTICELLI</string>
 
     <string-array name="image_salle1">
-        <item>@drawable/van_gogh_img1</item>
-        <item>@drawable/monet_img2</item>
-        <item>@drawable/monet_img1</item>
+        <item>@drawable/van_gogh_portrait</item>
+        <item>@drawable/monet_portrait</item>
+        <item>@drawable/renoir_portrait</item>
     </string-array>
 
     <string-array name="image_salle2">
-        <item>@drawable/dali_img1</item>
+        <item>@drawable/dali_portrait</item>
     </string-array>
     <string-array name="image_salle3">
+        <item>@drawable/botticelli_portrait</item>
     </string-array>
     <string-array name="image_salle4">
+        <item>@drawable/picasso_portrait</item>
+    </string-array>
+
+
+    <string-array name="images_picasso">
         <item>@drawable/picasso_img1</item>
+    </string-array>
+    <string-array name="images_renoir">
+        <item>@drawable/renoir_img1</item>
+    </string-array>
+    <string-array name="images_van_gogh">
+        <item>@drawable/van_gogh_img1</item>
+    </string-array>
+    <string-array name="images_monet">
+        <item>@drawable/monet_img1</item>
+        <item>@drawable/monet_img2</item>
+    </string-array>
+    <string-array name="images_dali">
+        <item>@drawable/dali_img1</item>>
+    </string-array>
+    <string-array name="images_botticelli">
+        <item>@drawable/botticelli_img1</item>>
     </string-array>
 
 
     <string-array name="desc_salle1">
-        <item>@string/van_gogh_desc</item>
-        <item>@string/monet_desc</item>
-        <item>@string/monet_desc</item>
+        <item>@string/van_gogh</item>
+        <item>@string/monet</item>
+        <item>@string/renoir</item>
     </string-array>
     <string-array name="desc_salle2">
-        <item>@string/dali_desc</item>
+        <item>@string/dali</item>
     </string-array>
     <string-array name="desc_salle3">
+        <item>@string/botticelli</item>
     </string-array>
     <string-array name="desc_salle4">
-        <item>@string/picasso_desc</item>
+        <item>@string/picasso</item>
     </string-array>
 </resources>

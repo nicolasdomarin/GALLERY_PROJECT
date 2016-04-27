@@ -1,6 +1,5 @@
 package com.example.galleryproject.gallery_project;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent newActivity = new Intent(MainActivity.this, SecondActivity.class);
+            Intent newActivity = new Intent(MainActivity.this, AuthorActivity.class);
             if (v == salle1){
                 newActivity.putExtra("<id>",1);
                 newActivity.putExtra("<title>","Impressionisme");

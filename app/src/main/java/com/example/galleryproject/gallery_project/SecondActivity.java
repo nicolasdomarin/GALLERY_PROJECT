@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class SecondActivity extends AppCompatActivity {
@@ -21,13 +22,13 @@ public class SecondActivity extends AppCompatActivity {
     private GridViewAdapter gridAdapter;
     private TextView title;
     private Button buttonBack;
-    private String idSalle;
+    private int idSalle;
     private String nameSalle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        idSalle= getIntent().getStringExtra("<id>");
+        idSalle= getIntent().getIntExtra("<id>",0);
         nameSalle = getIntent().getStringExtra("<title>");
         gridView = (GridView) findViewById(R.id.gridView);
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData(idSalle));
@@ -48,7 +49,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(SecondActivity.this, idSalle, Toast.LENGTH_SHORT).show();
+        Toast.makeText(SecondActivity.this, "", Toast.LENGTH_SHORT).show();
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -64,22 +65,30 @@ public class SecondActivity extends AppCompatActivity {
     /**
      * Prepare some dummy data for gridview
      */
-    private ArrayList<ImageItem> getData(String id) {
+    private ArrayList<ImageItem> getData(int id) {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
         TypedArray imgs = null;
+        ArrayList<String> mylist = new ArrayList<String>();
+;        String[] autors = null;
+
+       // Toast.makeText(SecondActivity.this, some_array[0], Toast.LENGTH_SHORT).show();
 
         switch (id){
-            case "1":
+            case 1:
                  imgs = getResources().obtainTypedArray(R.array.image_salle1);
+                 autors = getResources().getStringArray(R.array.desc_salle1);
                 break;
-            case "2":
+            case 2:
                imgs = getResources().obtainTypedArray(R.array.image_salle2);
+                autors = getResources().getStringArray(R.array.desc_salle2);
                 break;
-            case "3":
+            case 3:
                 imgs = getResources().obtainTypedArray(R.array.image_salle3);
+                autors = getResources().getStringArray(R.array.desc_salle3);
                 break;
-            case "4":
+            case 4:
                  imgs = getResources().obtainTypedArray(R.array.image_salle4);
+                autors = getResources().getStringArray(R.array.desc_salle4);
                 break;
 
         }
@@ -87,9 +96,10 @@ public class SecondActivity extends AppCompatActivity {
 
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
+
             //ca resize l'image en 300*300
             Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 300, 200, true);
-            imageItems.add(new ImageItem(resizedbitmap, "Peinture " + i));
+            imageItems.add(new ImageItem(resizedbitmap, autors[i]));
         }
         return imageItems;
     }

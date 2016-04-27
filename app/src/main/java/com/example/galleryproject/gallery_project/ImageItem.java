@@ -14,6 +14,8 @@ public class ImageItem {
         super();
         this.image = image;
         this.title = title;
+
+
     }
 
     public Bitmap getImage() {

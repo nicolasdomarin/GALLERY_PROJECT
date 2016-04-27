@@ -9,11 +9,10 @@
         tools:context="com.example.galleryproject.gallery_project.MainActivity"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-    android:background="#a8a8a8">
+        android:layout_height="match_parent">
 
 
-        <Button
+    <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="SALLE 1"
@@ -40,6 +39,7 @@
             android:text="SALLE 4"
             android:id="@+id/fourthSalleButton"
             android:layout_weight="1" />
+
 
 </LinearLayout>
 

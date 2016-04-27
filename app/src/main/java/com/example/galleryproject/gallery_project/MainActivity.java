@@ -34,19 +34,18 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent newActivity = new Intent(MainActivity.this, SecondActivity.class);
             if (v == salle1){
-                newActivity.putExtra("<id>","1");
+                newActivity.putExtra("<id>",1);
                 newActivity.putExtra("<title>","Impressionisme");
             }else if (v == salle2) {
-                newActivity.putExtra("<id>","2");
+                newActivity.putExtra("<id>",2);
                 newActivity.putExtra("<title>","Surréalisme");
             } else if (v==salle3) {
-                newActivity.putExtra("<id>","3");
+                newActivity.putExtra("<id>",3);
                 newActivity.putExtra("<title>","Humanisme");
             } else if (v==salle4){
-                newActivity.putExtra("<id>","4");
+                newActivity.putExtra("<id>",4);
                 newActivity.putExtra("<title>","Cubisme");
             }
-
 
             startActivity(newActivity);
         }

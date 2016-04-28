@@ -53,29 +53,15 @@ public class AuthorActivity extends AppCompatActivity {
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-
-
-
                ImageItem item = (ImageItem) parent.getItemAtPosition(position);
-//                Intent detailsActivity = new Intent(AuthorActivity.this, DetailsActivity.class);
-//                detailsActivity.putExtra("title", item.getTitle());
-//                detailsActivity.putExtra("image", item.getImage());
-//                startActivity(detailsActivity);
                   Intent paintingActivity = new Intent(AuthorActivity.this,PaintingActivity.class);
                   paintingActivity.putExtra("author_name",item.getTitle());
                  startActivity(paintingActivity);
             }
         });
     }
-
-    /**
-     * Prepare some dummy data for gridview
-     */
     private ArrayList<ImageItem> getData(int id) {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
-
-;
-
 
         switch (id){
             case 1:
@@ -94,8 +80,6 @@ public class AuthorActivity extends AppCompatActivity {
                  imgs = getResources().obtainTypedArray(R.array.image_salle4);
                 autors = getResources().getStringArray(R.array.desc_salle4);
                 break;
-
-
         }
 
 

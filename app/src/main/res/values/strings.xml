@@ -41,8 +41,36 @@
         <item>@drawable/dali_img1</item>>
     </string-array>
     <string-array name="images_botticelli">
-        <item>@drawable/botticelli_img1</item>>
+        <item>@drawable/botticelli_img1</item>
+        <item>@drawable/botticelli_img2</item>
     </string-array>
+
+
+
+    <string-array name="images_picasso_slider">
+        <item>picasso_img1</item>
+    </string-array>
+    <string-array name="images_renoir_slider">
+        <item>renoir_img1</item>
+    </string-array>
+    <string-array name="images_van_gogh_slider">
+        <item>van_gogh_img1</item>
+    </string-array>
+    <string-array name="images_monet_slider">
+        <item>monet_img1</item>
+        <item>monet_img2</item>
+    </string-array>
+    <string-array name="images_dali_slider">
+        <item>dali_img1</item>
+    </string-array>
+    <string-array name="images_botticelli_slider">
+        <item>botticelli_img1</item>
+        <item>botticelli_img2</item>
+    </string-array>
+
+
+
+
 
 
     <string-array name="desc_salle1">

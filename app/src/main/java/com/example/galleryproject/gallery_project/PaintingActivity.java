@@ -49,8 +49,9 @@ public class PaintingActivity extends AppCompatActivity {
 
                 String storage = saveToInternalStorage(item.getImage());
                 //detailsActivity.putExtra("imagePath",storage);
-              //  detailsActivity.putExtra("imageName",item.getImage().toString());
+                //detailsActivity.putExtra("imageName",item.getImage().toString());
                //detailsActivity.putExtra("image", item.getImage());
+                detailsActivity.putExtra("author",author);
               startActivity(detailsActivity);
 
             }

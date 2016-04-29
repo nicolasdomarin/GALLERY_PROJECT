@@ -27,17 +27,28 @@ public class PaintingActivity extends AppCompatActivity {
     private TextView title;
     TypedArray titre = null;
     TypedArray desc = null;
+    TypedArray imgs = null;
+     ArrayList<ImageItem> imageItems ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_painting);
 
+        // on recupere les parametre passées lors du changement d'activité
         author = getIntent().getStringExtra("author_name");
         title = (TextView) findViewById(R.id.titleSalleType);
+
+        // on definit le texte du titre
         title.setText(author);
 
+
         gridView = (GridView) findViewById(R.id.gridView);
+
+        //on definit l'adapter et on lui insere les données
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData());
+
+        //on definit l'adapter de la gridView
         gridView.setAdapter(gridAdapter);
         buttonBack = (Button) findViewById(R.id.buttonBack);
         buttonBack.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +58,7 @@ public class PaintingActivity extends AppCompatActivity {
             }
         });
 
+        //Action au clique sur l'image de la gridView
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -62,34 +74,12 @@ public class PaintingActivity extends AppCompatActivity {
     }
 
 
-    private String saveToInternalStorage(Bitmap bitmapImage){
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        File mypath=new File(directory,bitmapImage+".jpg");
 
 
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(mypath);
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return directory.getAbsolutePath();
-    }
-
-
+    // fonction permettant de recupere les données des ressources XML en fonction des paramètre recupérés lors du changement d'activité
 
     private ArrayList<ImageItem> getData() {
-        final ArrayList<ImageItem> imageItems = new ArrayList<>();
-        TypedArray imgs = null;
-
+       imageItems = new ArrayList<>();
 
         switch (author){
             case "VAN GOGH":
@@ -122,15 +112,13 @@ public class PaintingActivity extends AppCompatActivity {
                 titre = getResources().obtainTypedArray(R.array.titres_botticelli);
                 desc = getResources().obtainTypedArray(R.array.descriptions_botticelli);
                 break;
-
         }
 
-
+        // On redimensionne les images pour les afficher dans la gridView
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
             Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 400, 300, true);
             imageItems.add(new ImageItem(resizedbitmap, titre.getString(i),desc.getString(i)));
-
         }
         return imageItems;
     }

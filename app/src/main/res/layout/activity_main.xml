@@ -14,7 +14,7 @@
 
 
     <Button
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SALLE 1 \n IMPRESSIONISME"
             android:id="@+id/firstSalleButton"

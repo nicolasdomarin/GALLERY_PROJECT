@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Museum</string>
     <string name="monet">MONET</string>
     <string name="picasso">PICASSO</string>
@@ -96,11 +97,6 @@
         <item>@string/desc3</item>
     </string-array>
 
-    <string-array name="description_salle1">
-        <item>"C'est un véritable tableau de FDP datant de -145 avant ton grand-père"</item>
-        <item>"Bitch paye what you own me"</item>
-        <item>"Monet rules the world niggaz :)"</item>
-    </string-array>
 
     <string-array name="desc_salle2">
         <item>@string/dali</item>
@@ -115,12 +111,12 @@
 
 
     <string-array name="titres_van_gogh">
-        <item>"oeuvre de van gogh 1"</item>
-        <item>"oeuvre de van gogh 2"</item>
+        <item>"Autoportrait au chapeau de feutre"</item>
+        <item>"La Nuit étoilée"</item>
     </string-array>
     <string-array name="titres_monet">
-        <item>"oeuvre monet 1 "</item>
-        <item>"oeuvre monet 2"</item>
+        <item>"Impression soleil levant"</item>
+        <item>"Saint-Georges Majeur au crépuscule"</item>
     </string-array>
     <string-array name="titres_picasso">
         <item>"oeuvre picasso 1"</item>
@@ -143,16 +139,16 @@
 
 
     <string-array name="descriptions_van_gogh">
-        <item>"desc van gogh 1"</item>
-        <item>"desc van gogh 2"</item>
+        <item>"Ce portrait a été réalisé par Vincent van Gogh pendant l'hiver 1887-1888."</item>
+        <item>"Le tableau représente ce que Van Gogh pouvait voir de la chambre qu'il occupait dans l'asile."</item>
     </string-array>
     <string-array name="descriptions_monet">
-        <item>"monet desc 1"</item>
-        <item>"monet desc 2"</item>
+        <item>"1872"</item>
+        <item>"San Giorgio Maggiore by Twilight 1912"</item>
     </string-array>
     <string-array name="descriptions_picasso">
         <item>"picasso desc1"</item>
-        <item>"picasso desc2"</item>
+        <item>"Tete de femme"</item>
     </string-array>
     <string-array name="descriptions_botticelli">
         <item>"botticelli desc 1 "</item>

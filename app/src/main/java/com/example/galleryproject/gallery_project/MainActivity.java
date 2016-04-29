@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-   String myString = "";
 
     private Button salle1,salle2,salle3,salle4;
     @Override
@@ -15,10 +14,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        //Boutons pour chaque salle
+
         salle1 = (Button) findViewById(R.id.firstSalleButton);
         salle2 = (Button) findViewById(R.id.secondSalleButton);
         salle3 = (Button) findViewById(R.id.thirdSalleButton);
         salle4 = (Button) findViewById(R.id.fourthSalleButton);
+
+        //Actions au clique des boutons de chaque salle
 
         salle1.setOnClickListener(onClickListener);
         salle2.setOnClickListener(onClickListener);
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    //fonction général permettant de changer d'activité au clique
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

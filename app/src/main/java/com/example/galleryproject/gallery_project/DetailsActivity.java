@@ -22,16 +22,22 @@ public class DetailsActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details_activity);
-       bitmap = getIntent().getParcelableExtra("image");
+
+        //on recupere l'image et son titre
+
+        bitmap = getIntent().getParcelableExtra("image");
         String title = getIntent().getStringExtra("title") + "\n" + getIntent().getStringExtra("desc");
 
         TextView titleTextView = (TextView) findViewById(R.id.title);
         titleTextView.setText(title);
 
         ImageView imageView = (ImageView) findViewById(R.id.image);
+       // on definit le bitmap dans l'imageView
         imageView.setImageBitmap(bitmap);
 
         Button buttonEnregistrer = (Button) findViewById(R.id.buttonEnregistrer);
+
+        // Action sur le bouton enregistrer
         buttonEnregistrer.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {

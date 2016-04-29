@@ -66,6 +66,8 @@ public class AuthorActivity extends AppCompatActivity {
         });
 
 
+
+        //Boutons permettant de passer d'une salle  à une autre
         buttonSuivant = (Button) findViewById(R.id.buttonSuivant);
         if(idSalleSuivante < 5) {
             buttonSuivant.setOnClickListener(new View.OnClickListener() {

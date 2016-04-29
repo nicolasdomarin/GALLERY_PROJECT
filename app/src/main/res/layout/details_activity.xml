@@ -3,19 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#000"
-    android:id="@+id/framelayout">
+    android:background="#000">
 
-    <android.support.v4.view.ViewPager
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
+
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:scaleType="fitCenter" />
 
@@ -29,10 +25,11 @@
         android:textColor="#fff"
         android:textSize="20dp" />
 
-    <ExpandableListView
+    <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/expandableListView"
-        android:layout_gravity="right|top" />
+        android:layout_height="84dp"
+        android:layout_gravity="right|bottom"
+        android:id="@+id/buttonEnregistrer"
+        android:background="@android:drawable/ic_menu_save"
+        android:singleLine="true" />
 </FrameLayout>
-

@@ -13,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -52,7 +51,7 @@ public class PaintingActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
-                Intent detailsActivity = new Intent(PaintingActivity.this, DetailsActivity2.class);
+                Intent detailsActivity = new Intent(PaintingActivity.this, DetailsActivity.class);
                 detailsActivity.putExtra("title", item.getTitle());
                 detailsActivity.putExtra("desc", item.getDesc());
                 detailsActivity.putExtra("image",item.getImage());
@@ -129,7 +128,7 @@ public class PaintingActivity extends AppCompatActivity {
 
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 600, 400, true);
+            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 400, 300, true);
             imageItems.add(new ImageItem(resizedbitmap, titre.getString(i),desc.getString(i)));
 
         }

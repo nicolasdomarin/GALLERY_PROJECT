@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -52,12 +53,13 @@ public class PaintingActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
                 Intent detailsActivity = new Intent(PaintingActivity.this, DetailsActivity2.class);
-                String storage = saveToInternalStorage(item.getImage());
-                detailsActivity.putExtra("author",author);
-                detailsActivity.putExtra("title",item.getTitle());
-                detailsActivity.putExtra("image",storage);
-                detailsActivity.putExtra("desc",item.getDesc());
-              startActivity(detailsActivity);
+                detailsActivity.putExtra("title", item.getTitle());
+                detailsActivity.putExtra("desc", item.getDesc());
+                //String storage = saveToInternalStorage(item.getImage());
+//                detailsActivity.putExtra("image",storage);
+                detailsActivity.putExtra("image",item.getImage());
+            //    detailsActivity.putExtra("imageName",item.getImage().toString());
+                startActivity(detailsActivity);
 
             }
         });
@@ -91,7 +93,7 @@ public class PaintingActivity extends AppCompatActivity {
     private ArrayList<ImageItem> getData() {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
         TypedArray imgs = null;
-        ;
+
 
         switch (author){
             case "VAN GOGH":
@@ -130,7 +132,7 @@ public class PaintingActivity extends AppCompatActivity {
 
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 500, 600, true);
+            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 300, 400, true);
             imageItems.add(new ImageItem(resizedbitmap, titre.getString(i),desc.getString(i)));
 
         }

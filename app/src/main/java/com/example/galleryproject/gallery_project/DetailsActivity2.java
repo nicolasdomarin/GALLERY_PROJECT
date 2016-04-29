@@ -3,6 +3,7 @@ package com.example.galleryproject.gallery_project;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -23,35 +26,30 @@ import java.io.IOException;
  * Created by ubuntu on 26/04/16.
  */
 public class DetailsActivity2 extends AppCompatActivity{
-
-    private Bitmap bitmap;
+     Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.details_activity2);
-
+        setContentView(R.layout.details_activity);
+       bitmap = getIntent().getParcelableExtra("image");
         String title = getIntent().getStringExtra("title") + "\n" + getIntent().getStringExtra("desc");
-        String path = getIntent().getStringExtra("storage");
 
         TextView titleTextView = (TextView) findViewById(R.id.title);
         titleTextView.setText(title);
 
         ImageView imageView = (ImageView) findViewById(R.id.image);
-     //   imageView.setImageBitmap(bitmap);
-
-        Toast.makeText(DetailsActivity2.this, path, Toast.LENGTH_SHORT).show();
-        Picasso.with(DetailsActivity2.this).load(path).into(imageView);
+        imageView.setImageBitmap(bitmap);
 
         Button buttonEnregistrer = (Button) findViewById(R.id.buttonEnregistrer);
         buttonEnregistrer.setOnClickListener(new View.OnClickListener() {
-            @Override
+           @Override
             public void onClick(View v) {
                 try {
                     saveToInternalStorage(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+           }
         });
     }
 

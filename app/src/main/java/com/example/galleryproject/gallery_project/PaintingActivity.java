@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -23,12 +24,16 @@ public class PaintingActivity extends AppCompatActivity {
     private GridView gridView;
     private GridViewAdapter gridAdapter;
     private Button buttonBack;
+    private TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_painting);
 
         author = getIntent().getStringExtra("author_name");
+        title = (TextView) findViewById(R.id.titleSalleType);
+        title.setText(author);
+
         gridView = (GridView) findViewById(R.id.gridView);
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData());
         gridView.setAdapter(gridAdapter);
@@ -45,13 +50,9 @@ public class PaintingActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 ImageItem item = (ImageItem) parent.getItemAtPosition(position);
                 Intent detailsActivity = new Intent(PaintingActivity.this, DetailsActivity.class);
-             //  detailsActivity.putExtra("title", item.getTitle());
-
                 String storage = saveToInternalStorage(item.getImage());
-                //detailsActivity.putExtra("imagePath",storage);
-                //detailsActivity.putExtra("imageName",item.getImage().toString());
-               //detailsActivity.putExtra("image", item.getImage());
                 detailsActivity.putExtra("author",author);
+                detailsActivity.putExtra("title",item.getTitle());
               startActivity(detailsActivity);
 
             }

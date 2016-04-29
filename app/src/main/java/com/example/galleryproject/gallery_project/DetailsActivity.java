@@ -22,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.lang.reflect.Field;
 
 
@@ -30,14 +32,14 @@ public class DetailsActivity extends FragmentActivity{
     private ViewPager mPager;
     private FrameLayout frameLayout;
     private String author;
-
+    private TextView title;
+    private String name_painting;
     private static final int NUM_PAGES = 2;
 
     private PagerAdapter mPagerAdapter;
 
     String [] mm;
-
-  Drawable[] mResources = {}  ;
+    Drawable[] mResources = {}  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +47,13 @@ public class DetailsActivity extends FragmentActivity{
         setContentView(R.layout.details_activity);
 
         mPagerAdapter = new ScreenSlidePagerAdapter(this);
-
-        //String title = getIntent().getStringExtra("title");
-        //Bitmap bitmap = getIntent().getParcelableExtra("image");
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mPagerAdapter);
         author = getIntent().getStringExtra("author");
+        title = (TextView) findViewById(R.id.title);
+        name_painting = getIntent().getStringExtra("title");
 
+        title.setText(name_painting);
 
 
 
@@ -82,13 +84,12 @@ public class DetailsActivity extends FragmentActivity{
             mResources[x] = getResources().getDrawable(getResources().getIdentifier(mm[x],"drawable", this.getPackageName() ));
         }
 
+
         mPagerAdapter.notifyDataSetChanged();
 
-        /*TextView titleTextView = (TextView) findViewById(R.id.title);
-        titleTextView.setText(title);
 
-        ImageView imageView = (ImageView) findViewById(R.id.image);
-        imageView.setImageBitmap(bitmap);*/
+        //ImageView imageView = (ImageView) findViewById(R.id.image);
+        //imageView.setImageBitmap(bitmap);*/
     }
 
 
@@ -129,12 +130,13 @@ public class DetailsActivity extends FragmentActivity{
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             View itemView = mLayoutInflater.inflate(R.layout.details_activity, container, false);
-
             ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
             //Bitmap bitmap = BitmapFactory.decodeResource(getResources(), mResources[position]);
             //Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 500, 600, true);
             imageView.setImageDrawable(mResources[position]);
+
             container.addView(itemView);
+
             return itemView;
         }
 
@@ -142,5 +144,7 @@ public class DetailsActivity extends FragmentActivity{
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((FrameLayout) object);
         }
+
+
     }
 }

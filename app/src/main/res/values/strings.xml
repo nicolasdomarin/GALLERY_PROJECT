@@ -26,35 +26,45 @@
 
     <string-array name="images_picasso">
         <item>@drawable/picasso_img1</item>
+        <item>@drawable/picasso_img2</item>
     </string-array>
+
     <string-array name="images_renoir">
         <item>@drawable/renoir_img1</item>
+        <item>@drawable/renoir_img2</item>
     </string-array>
     <string-array name="images_van_gogh">
         <item>@drawable/van_gogh_img1</item>
+        <item>@drawable/van_gogh_img2</item>
     </string-array>
+
     <string-array name="images_monet">
         <item>@drawable/monet_img1</item>
         <item>@drawable/monet_img2</item>
     </string-array>
+
     <string-array name="images_dali">
-        <item>@drawable/dali_img1</item>>
+        <item>@drawable/dali_img1</item>
+        <item>@drawable/dali_img2</item>
     </string-array>
+
     <string-array name="images_botticelli">
-        <item>@drawable/botticelli_img1</item>
+        <item>@drawable/botticelli_img3</item>
         <item>@drawable/botticelli_img2</item>
+        <item>@drawable/botticelli_img1</item>
     </string-array>
-
-
 
     <string-array name="images_picasso_slider">
         <item>picasso_img1</item>
+        <item>picasso_img2</item>
     </string-array>
     <string-array name="images_renoir_slider">
         <item>renoir_img1</item>
+        <item>renoir_img2</item>
     </string-array>
     <string-array name="images_van_gogh_slider">
         <item>van_gogh_img1</item>
+        <item>van_gogh_img2</item>
     </string-array>
     <string-array name="images_monet_slider">
         <item>monet_img1</item>
@@ -62,15 +72,13 @@
     </string-array>
     <string-array name="images_dali_slider">
         <item>dali_img1</item>
+        <item>dali_img2</item>
     </string-array>
     <string-array name="images_botticelli_slider">
         <item>botticelli_img1</item>
         <item>botticelli_img2</item>
+        <item>botticelli_img3</item>
     </string-array>
-
-
-
-
 
 
     <string-array name="desc_salle1">

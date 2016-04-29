@@ -15,7 +15,7 @@ public class ScreenSlidePagerFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.details_activity2,container,false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.details_activity,container,false);
         return rootView;
     }
 }

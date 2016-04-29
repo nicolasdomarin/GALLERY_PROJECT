@@ -55,10 +55,7 @@ public class PaintingActivity extends AppCompatActivity {
                 Intent detailsActivity = new Intent(PaintingActivity.this, DetailsActivity2.class);
                 detailsActivity.putExtra("title", item.getTitle());
                 detailsActivity.putExtra("desc", item.getDesc());
-                //String storage = saveToInternalStorage(item.getImage());
-//                detailsActivity.putExtra("image",storage);
                 detailsActivity.putExtra("image",item.getImage());
-            //    detailsActivity.putExtra("imageName",item.getImage().toString());
                 startActivity(detailsActivity);
 
             }
@@ -132,7 +129,7 @@ public class PaintingActivity extends AppCompatActivity {
 
         for (int i = 0; i < imgs.length(); i++) {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
-            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 300, 400, true);
+            Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 600, 400, true);
             imageItems.add(new ImageItem(resizedbitmap, titre.getString(i),desc.getString(i)));
 
         }

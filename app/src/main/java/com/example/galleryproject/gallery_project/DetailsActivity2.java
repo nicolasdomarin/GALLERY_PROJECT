@@ -30,7 +30,7 @@ public class DetailsActivity2 extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.details_activity);
+        setContentView(R.layout.details_activity2);
        bitmap = getIntent().getParcelableExtra("image");
         String title = getIntent().getStringExtra("title") + "\n" + getIntent().getStringExtra("desc");
 

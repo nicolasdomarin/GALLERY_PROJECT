@@ -6,6 +6,9 @@
     <string name="van_gogh">VAN GOGH</string>
     <string name="renoir">RENOIR</string>
     <string name="botticelli">BOTTICELLI</string>
+    <string name="desc1">ddd</string>
+    <string name="desc2">ddd1</string>
+    <string name="desc3">ddd2</string>
 
     <string-array name="image_salle1">
         <item>@drawable/van_gogh_portrait</item>
@@ -86,6 +89,19 @@
         <item>@string/monet</item>
         <item>@string/renoir</item>
     </string-array>
+
+    <string-array name="description_van_gogh">
+        <item>@string/desc1</item>
+        <item>@string/desc2</item>
+        <item>@string/desc3</item>
+    </string-array>
+
+    <string-array name="description_salle1">
+        <item>"C'est un véritable tableau de FDP datant de -145 avant ton grand-père"</item>
+        <item>"Bitch paye what you own me"</item>
+        <item>"Monet rules the world niggaz :)"</item>
+    </string-array>
+
     <string-array name="desc_salle2">
         <item>@string/dali</item>
     </string-array>
@@ -95,4 +111,63 @@
     <string-array name="desc_salle4">
         <item>@string/picasso</item>
     </string-array>
+
+
+
+    <string-array name="titres_van_gogh">
+        <item>"oeuvre de van gogh 1"</item>
+        <item>"oeuvre de van gogh 2"</item>
+    </string-array>
+    <string-array name="titres_monet">
+        <item>"oeuvre monet 1 "</item>
+        <item>"oeuvre monet 2"</item>
+    </string-array>
+    <string-array name="titres_picasso">
+        <item>"oeuvre picasso 1"</item>
+        <item>"oeuvre picasso 2"</item>
+    </string-array>
+    <string-array name="titres_botticelli">
+        <item>"oeuvre de botticelli 1"</item>
+        <item>"oeuvre de botticelli 2"</item>
+        <item>"oeuvre de botticelli 3"</item>
+    </string-array>
+    <string-array name="titres_dali">
+        <item>"titre dali 1"</item>
+        <item>"titre dali 2"</item>
+    </string-array>
+    <string-array name="titres_renoir">
+        <item>"titre renoir 1"</item>
+        <item>"titre renoir 2"</item>
+    </string-array>
+
+
+
+    <string-array name="descriptions_van_gogh">
+        <item>"desc van gogh 1"</item>
+        <item>"desc van gogh 2"</item>
+    </string-array>
+    <string-array name="descriptions_monet">
+        <item>"monet desc 1"</item>
+        <item>"monet desc 2"</item>
+    </string-array>
+    <string-array name="descriptions_picasso">
+        <item>"picasso desc1"</item>
+        <item>"picasso desc2"</item>
+    </string-array>
+    <string-array name="descriptions_botticelli">
+        <item>"botticelli desc 1 "</item>
+        <item>"botticelli desc 2 "</item>
+        <item>"botticelli desc 3"</item>
+    </string-array>
+    <string-array name="descriptions_dali">
+        <item>"dali desc 1 "</item>
+        <item>"dali desc 2"</item>
+    </string-array>
+    <string-array name="descriptions_renoir">
+        <item>"renoir desc 1 "</item>
+        <item>"renoir desc 2"</item>
+    </string-array>
+
+
+
 </resources>

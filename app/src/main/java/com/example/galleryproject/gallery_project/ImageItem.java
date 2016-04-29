@@ -9,13 +9,23 @@ public class ImageItem {
 
     private Bitmap image;
     private String title;
+    private String desc;
 
-    public ImageItem(Bitmap image, String title) {
+    public ImageItem(Bitmap image, String title,String desc ) {
         super();
         this.image = image;
         this.title = title;
+        this.desc = desc;
 
 
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public Bitmap getImage() {

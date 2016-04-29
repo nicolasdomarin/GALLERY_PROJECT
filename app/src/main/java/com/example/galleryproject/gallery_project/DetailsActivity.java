@@ -40,7 +40,7 @@ public class DetailsActivity extends FragmentActivity{
 
     String [] mm;
     Drawable[] mResources = {}  ;
-
+    String[] desc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +51,6 @@ public class DetailsActivity extends FragmentActivity{
         mPager.setAdapter(mPagerAdapter);
         author = getIntent().getStringExtra("author");
         title = (TextView) findViewById(R.id.title);
-        name_painting = getIntent().getStringExtra("title");
-
-        title.setText(name_painting);
-
-
 
         switch (author){
             case "VAN GOGH":
@@ -63,6 +58,7 @@ public class DetailsActivity extends FragmentActivity{
                 break;
             case "BOTTICELLI":
                 mm = getResources().getStringArray(R.array.images_botticelli_slider);
+
                 break;
             case "PICASSO":
                 mm = getResources().getStringArray(R.array.images_picasso_slider);
@@ -72,16 +68,20 @@ public class DetailsActivity extends FragmentActivity{
                 break;
             case "RENOIR":
                 mm = getResources().getStringArray(R.array.images_renoir_slider);
+                desc = getResources().getStringArray(R.array.description_van_gogh);
             break;
             case "DALI":
                 mm = getResources().getStringArray(R.array.images_dali_slider);
+
             break;
         }
 
         mResources = new Drawable[mm.length];
+
         for ( int x =0; x < mm.length; x++)
         {
             mResources[x] = getResources().getDrawable(getResources().getIdentifier(mm[x],"drawable", this.getPackageName() ));
+
         }
 
 
@@ -131,12 +131,8 @@ public class DetailsActivity extends FragmentActivity{
         public Object instantiateItem(ViewGroup container, int position) {
             View itemView = mLayoutInflater.inflate(R.layout.details_activity, container, false);
             ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            //Bitmap bitmap = BitmapFactory.decodeResource(getResources(), mResources[position]);
-            //Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 500, 600, true);
             imageView.setImageDrawable(mResources[position]);
-
             container.addView(itemView);
-
             return itemView;
         }
 
@@ -144,7 +140,5 @@ public class DetailsActivity extends FragmentActivity{
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((FrameLayout) object);
         }
-
-
     }
 }

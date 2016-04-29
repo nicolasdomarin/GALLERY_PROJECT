@@ -9,34 +9,35 @@
         tools:context="com.example.galleryproject.gallery_project.MainActivity"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+    android:background="@drawable/galerie">
 
 
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="SALLE 1"
+            android:text="SALLE 1 \n IMPRESSIONISME"
             android:id="@+id/firstSalleButton"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="SALLE 2"
+            android:text="SALLE 2 \n SURRÉALISME"
             android:id="@+id/secondSalleButton"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="SALLE 3"
+            android:text="SALLE 3 \n HUMANISME"
             android:id="@+id/thirdSalleButton"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="SALLE 4"
+            android:text="SALLE 4 \n CUBISME"
             android:id="@+id/fourthSalleButton"
             android:layout_weight="1" />
 

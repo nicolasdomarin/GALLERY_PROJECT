@@ -23,6 +23,9 @@ public class AuthorActivity extends AppCompatActivity {
     private Button buttonBack;
     private int idSalle;
     private String nameSalle;
+    private Button buttonSuivant;
+    private Button buttonPrecedent;
+
     String[] autors = null;
     TypedArray imgs = null;
     @Override
@@ -31,6 +34,8 @@ public class AuthorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         idSalle= getIntent().getIntExtra("<id>",0);
         nameSalle = getIntent().getStringExtra("<title>");
+        final int idSallePrecedente = idSalle-1;
+        final int idSalleSuivante = idSalle+1;
         gridView = (GridView) findViewById(R.id.gridView);
         gridAdapter = new GridViewAdapter(this, R.layout.grid_item_layout, getData(idSalle));
         gridView.setAdapter(gridAdapter);
@@ -59,6 +64,70 @@ public class AuthorActivity extends AppCompatActivity {
                  startActivity(paintingActivity);
             }
         });
+
+
+        buttonSuivant = (Button) findViewById(R.id.buttonSuivant);
+        if(idSalleSuivante < 5) {
+            buttonSuivant.setOnClickListener(new View.OnClickListener() {
+                //            final int myNum = Integer.parseInt(idSalle) + 1;
+//            String testeu = String.valueOf(myNum);
+                @Override
+                public void onClick(View v) {
+                    Intent intent = getIntent();
+                    finish();
+
+
+                    intent.putExtra("<id>", idSalleSuivante);
+
+                    if (idSalleSuivante == 1){
+                        intent.putExtra("<title>","Impressionisme");
+                    }else if (idSalleSuivante == 2) {
+                        intent.putExtra("<title>","Surréalisme");
+                    } else if (idSalleSuivante == 3) {
+                        intent.putExtra("<title>","Humanisme");
+                    } else if (idSalleSuivante == 4){
+                        intent.putExtra("<title>","Cubisme");
+                    }
+
+                    startActivity(intent);
+                }
+            });
+        }
+        else {
+            buttonSuivant.setVisibility(View.INVISIBLE);
+        }
+
+        buttonPrecedent = (Button) findViewById(R.id.buttonPrecedent);
+        if(idSallePrecedente > 0) {
+            buttonPrecedent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = getIntent();
+                    finish();
+
+
+                    intent.putExtra("<id>", idSallePrecedente);
+
+                    if (idSallePrecedente == 1){
+                        intent.putExtra("<title>","Impressionisme");
+                    }else if (idSallePrecedente == 2) {
+                        intent.putExtra("<title>","Surréalisme");
+                    } else if (idSallePrecedente == 3) {
+                        intent.putExtra("<title>","Humanisme");
+                    } else if (idSallePrecedente == 4){
+                        intent.putExtra("<title>","Cubisme");
+                    }
+
+                    startActivity(intent);
+                }
+            });
+        }
+        else {
+            buttonPrecedent.setVisibility(View.INVISIBLE);
+        }
+
+
+
     }
     private ArrayList<ImageItem> getData(int id) {
         final ArrayList<ImageItem> imageItems = new ArrayList<>();
@@ -87,7 +156,7 @@ public class AuthorActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imgs.getResourceId(i, -1));
             //ca resize l'image en 300*300
             Bitmap resizedbitmap = Bitmap.createScaledBitmap(bitmap, 500, 600, true);
-            imageItems.add(new ImageItem(resizedbitmap, autors[i]));
+            imageItems.add(new ImageItem(resizedbitmap, autors[i],""));
         }
         return imageItems;
     }
